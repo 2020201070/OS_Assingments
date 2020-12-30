@@ -1,0 +1,45 @@
+TRACKER:
+g++ -pthread -o track track.cpp -lssl -lcrypto
+./track tracker_info
+	tracker ip   tracker port
+
+
+
+PEER:	
+g++ -pthread -o peer1 peer1.cpp -lssl -lcrypto
+
+./peer1 127.81.92.63 5000 tracker_info
+./peer1 127.81.93.70 6000 tracker_info
+
+        t_ip        t_pt   ps_ip     ps_pt
+        
+CMD:
+p1:
+create_user a b
+login a b
+create_group p
+list_requests p
+accept_request p f
+upload_file /home/code/ssd_project/deploy.txt p
+list_files p
+logout
+show_downloads
+login a b
+show_downloads
+
+
+
+p2:
+create_user f k
+login f k
+list_groups
+join_group p
+list_files p
+download_file p /home/code/ssd_project/deploy.txt /home/code
+upload_file /home/code/a.js p
+leave_group p
+upload_file /home/code/a.js p
+
+
+File Explorer
+
